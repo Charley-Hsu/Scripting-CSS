@@ -102,3 +102,24 @@ test.style.border = '5px solid red';
 | visibility | visibility |
 | width | width |
 | z-index | zIndex |
+
+> * 1.如果一个CSS属性名包含一个或多个连字符，CSSStyleDeclaration属性名的格式应该是移除连字符，将每个连字符后面紧接着的字母大写
+
+  | background-color | backgroundColor |
+ | :--- | :--- |
+> * 2.Shorthand属性可以支持属性缩写
+```javascript
+test.style.border = '5px solid red';
+```
+> * 3.当一个CSS属性(如float)在JavaScript中对应的名字是保留字时，在之前加"css"前缀来创建合法的属性。
+
+ | float | cssFloat |
+ | :--- | :--- |
+
+> * 4.如果设置的行间样式不符合预定格式，并不会报错，而是静默失败
+> * 5.IE8-浏览器支持给属性设置值时不带单位
+```javascript
+test.style.height = '20';
+```
+> * 6.如果读取没有设置过的行间样式将返回空字符串 ' '
+> * 7.当颜色属性设置为16进制颜色时，IE8-浏览器查询属性会返回对应rgb颜色。
