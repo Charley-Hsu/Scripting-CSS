@@ -18,7 +18,10 @@ Javascript有3种对象可以被用作查询和修改CSS。
 ------
 ## 2.脚本化内联样式
 ## 2.1Description
-`var test = document.getElementById("test"); 
+```javascript
+var test = document.getElementById("test"); 
 test.style.border = '5px solid red';
-`
+```
 > 类似大多数HTML属性，style也是元素对象的属性，它可以在javascript操作，但是style属性不同寻常：它的值不是字符串，而是一个CSSStyleDeclaration对象。该style对象的javascript属性代表了HTML代码中通过style指定的css属性。
+## 2.2Used
+常用javascript操作css属性对应列表：
