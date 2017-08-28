@@ -9,10 +9,10 @@
 > CSSStyleDeclaration：是style的属性的一个样式声明对象，表示一个CSS属性键值对的集合;
 ------
 Javascript有3种对象可以被用作查询和修改CSS。
-| 对象| 浏览器支持   |  备注  |
-| ----- | :-----:  | :----:  |
-| Style(CSSStyleDeclaration)| IE7以上全浏览器 |        |
-| currentStyle   |   IE&Opera2   |   只能查询不能修改   |
-| runtimeStyle   |    IE    |  只能添加和修改  |
-------
 
+| 对象| 浏览器支持   |  备注  |
+| -----                     | :-----:        | :----:        |
+| Style(CSSStyleDeclaration)| IE7以上全浏览器 |               |
+| currentStyle              |   IE&Opera2    |只能查询不能修改|
+| runtimeStyle              |    IE          |只能添加和修改  | 
+------
