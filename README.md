@@ -1,6 +1,8 @@
 # Scripting-CSS 
 将会写一些关于javascript脚本化CSS知识点的内容
 ------
+[TOC]
+------
 ## 0.什么是脚本化CSS
 脚本化CSS简单来说就是通过JavaScript脚本的方式对页面元素的css样式进行动态的增删改查。
 ------
@@ -126,17 +128,13 @@ test.style.height = '20';
 
 ## 2.3Properties
 
-1. **CSSStyleDeclaration.cssText**
+> *1. **CSSStyleDeclaration.cssText**
+    声明块的文本内容。设置这个属性会改变样式。IE8-浏览器返回的属性名是全大写的。
+    IE8-浏览器返回&#39;HEIGHT:40px;WIDTH:40px;&#39;其他浏览器返回&#39;height: 40px; width: 40px;&#39;
 
-声明块的文本内容。设置这个属性会改变样式。IE8-浏览器返回的属性名是全大写的
-
-//IE8-浏览器返回&#39;HEIGHT: 40px; WIDTH: 40px;&#39;，其他浏览器返回&#39;height: 40px; width: 40px;&#39;
-
-1. **CSSStyleDeclaration.length**
-
-length属性返回内联样式中的样式个数。
-
-IE8-浏览器不支持
+> *2. **CSSStyleDeclaration.length**
+    length属性返回内联样式中的样式个数。
+    <i class="icon-warning-sign"></i>IE8-浏览器不支持
 
 1. **CSSStyleDeclaration.parentRule**
 
