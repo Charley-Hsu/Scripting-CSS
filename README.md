@@ -1,7 +1,9 @@
 # Scripting-CSS 
 将会写一些关于javascript脚本化CSS知识点的内容
 ------
+
 [TOC]
+
 ------
 ## 0.什么是脚本化CSS
 脚本化CSS简单来说就是通过JavaScript脚本的方式对页面元素的css样式进行动态的增删改查。
