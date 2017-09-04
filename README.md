@@ -109,7 +109,7 @@ test.style.border = '5px solid red';
 
 > * 1.如果一个CSS属性名包含一个或多个连字符，CSSStyleDeclaration属性名的格式应该是移除连字符，将每个连字符后面紧接着的字母大写
 
-  | background-color | backgroundColor |
+| background-color | backgroundColor |
  | :--- | :--- |
 > * 2.Shorthand属性可以支持属性缩写
 ```javascript
@@ -138,47 +138,40 @@ test.style.height = '20';
     length属性返回内联样式中的样式个数。
     <i class="icon-warning-sign"></i>IE8-浏览器不支持
 
-1. **CSSStyleDeclaration.parentRule**
+> *3. **CSSStyleDeclaration.parentRule**
+    parentRule属性表示CSS信息的CSSRule对象。
+    *IE8-浏览器不支持*
 
-parentRule属性表示CSS信息的CSSRule对象。
+### 2.4Method
 
-IE8-浏览器不支持
+> * 1. **getPropertyPriority()**
+    返回可选的优先级，如果给定的属性使用了!important设置，则返回&quot;important&quot;；否则返回空字符串。
+    *IE8-浏览器不支持*
+    ```javascript
+     priString= styleObj.getPropertyPriority(&#39;color&#39;)
+     ```
 
-### 2.4        Method
+> * 2. **getPropertyValue()**
+    返回给定属性的值，字符串类型。
+    ```javascript
+    valString= styleObj.getPropertyValue(&#39;color&#39;)
+    ```
+    *IE8-浏览器不支持*
 
-1. getPropertyPriority()
+> * 3. **item()**
+    返回给定位置的CSS属性的名称，也可以使用方括号语法
+    ``` javascript
+    nameString= styleObj.item(0)
+    Or: nameString= styleObj[0]
+    ```
+    *IE8-浏览器不支持item()方法，只支持方括号语法*
 
-返回可选的优先级，如果给定的属性使用了!important设置，则返回&quot;important&quot;；否则返回空字符串。
-
-IE8-浏览器不支持
-
-Example： priString= styleObj.getPropertyPriority(&#39;color&#39;)
-
-1. getPropertyValue()
-
-返回给定属性的值，字符串类型。
-
-Example: valString= styleObj.getPropertyValue(&#39;color&#39;)
-
-IE8-浏览器不支持
-
-1. item()
-
-返回给定位置的CSS属性的名称，也可以使用方括号语法
-
-Example: nameString= styleObj.item(0)
-
-Or:      nameString= styleObj[0]
-
-IE8-浏览器不支持item()方法，只支持方括号语法
-
-1. removeProperty()
-
-从样式中删除给定属性，并返回被删除属性的属性值
-
-Example: valString= styleObj.removeProperty(&#39;color&#39;)
-
-IE8-浏览器不支持
+> *4. **removeProperty()**
+    从样式中删除给定属性，并返回被删除属性的属性值
+    ``` javascript 
+    var String= styleObj.removeProperty(&#39;color&#39;)
+    ```
+    *IE8-浏览器不支持*
 
 1. setProperty()
 
@@ -406,7 +399,7 @@ Note：IE8-浏览器方法addRule(ruleKey,ruleValue,index)向cssRules集合中�
 
       Firefox浏览器不支持。
 
-- **deleteRule**** ()**
+- **deleteRule()**
 
 deleteRule(index)方法删除cssRules集合中指定位置的规则，无返回值。document.styleSheets[0].deleteRule(0)
 
