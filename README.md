@@ -178,48 +178,42 @@ test.style.height = '20';
 ```
     *IE8-浏览器不支持*
 
-1. setProperty()
+> * 5.**setProperty()**
+    setProperty(propertyName,value,priority)方法将给定属性设置为相应的值，并加上优先级标志(&quot;important&quot;或一个空字符串)，该方法无返回值
+```javascript--
+   styleObj.setProperty(&#39;color&#39;, &#39;red&#39;, &#39;important&#39;)
+```
+    *IE8-浏览器不支持*
 
-setProperty(propertyName,value,priority)方法将给定属性设置为相应的值，并加上优先级标志(&quot;important&quot;或一个空字符串)，该方法无返回值
+> * 6.**getPropertyCSSValue()**
+    返回包含两个属性的CSSRule类型，这两个属性分别是cssText和cssValueType。其中cssText属性的值与getPropertyValue()返回的值相同，而cssValueType属性则是一个数值常量，表示值的类型：0表示继承的值，1表示基本的值，2表示值列表，3表示自定义的值
+```javascript
+    cssString= window.getComputedStyle(elem, null).getPropertyCSSValue(&#39;color&#39;).cssText;
+```
+    *不支持大部分浏览器，支持的部分浏览器也经常性的抛出错误，不就将会被放弃，所以不要使用。*
 
-Example: styleObj.setProperty(&#39;color&#39;, &#39;red&#39;, &#39;important&#39;)
-
-IE8-浏览器不支持
-
-1. getPropertyCSSValue()
-
-返回包含两个属性的CSSRule类型，这两个属性分别是cssText和cssValueType。其中cssText属性的值与getPropertyValue()返回的值相同，而cssValueType属性则是一个数值常量，表示值的类型：0表示继承的值，1表示基本的值，2表示值列表，3表示自定义的值
-
-Example: cssString= window.getComputedStyle(elem, null).getPropertyCSSValue(&#39;color&#39;).cssText;
-
-不支持大部分浏览器，支持的部分浏览器也经常性的抛出错误，不就将会被放弃，所以不要使用。
-
-1. 3.查询计算出的样式
+## 3.查询计算出的样式
 
 ### 3.1Description
-
+```javascript
 let title = document.getElementById(&quot;section1title&quot;);
-
 let titlestyles = window.getComputedStyle(element,null);
+```
+> 元素的渲染结果是多个CSS样式博弈后的最终结果，这也是CSS中的C(cascade)层叠的含义。
 
-元素的渲染结果是多个CSS样式博弈后的最终结果，这也是CSS中的C(cascade)层叠的含义。
-
-元素的计算样式是一组属性值，它由浏览器通过把内联样式结合所有链接样式表中所有可应用的样式规则后导出（或计算）得到的,是元素最终呈现时使用的属性值。
+> 元素的计算样式是一组属性值，它由浏览器通过把内联样式结合所有链接样式表中所有可应用的样式规则后导出（或计算）得到的,是元素最终呈现时使用的属性值。
 
 ### 3.2 Method
 
-**getComputedStyle()**
+> * 1.**getComputedStyle()**
 
-getComputedStyle()方法原本是window对象下的方法，DOM Level 2 Style中增强了该方法，所以getComputedStyle()方法一共有下面3种写法：
-
--
-  -
-    -
-      - defaultView.getComputedStyle(div).width
-      - getComputedStyle(div).width
-      - getComputedStyle(div).width
-
-getComputedStyle()方法接收两个参数：第一个是要取得计算样式的元素，第二个是一个伪元素字符串。如果不需要伪元素信息，第二个参数可以是null，如果没有默认为null（The pseudo-element or null if none.）。
+    getComputedStyle()方法原本是window对象下的方法，DOM Level 2 Style中增强了该方法，所以getComputedStyle()方法一共有下面3种写法：
+```javascript
+defaultView.getComputedStyle(div).width
+getComputedStyle(div).width
+getComputedStyle(div).width
+```
+    getComputedStyle()方法接收两个参数：第一个是要取得计算样式的元素，第二个是一个伪元素字符串。如果不需要伪元素信息，第二个参数可以是null，如果没有默认为null（The pseudo-element or null if none.）。
 
 getComputedStyle()方法返回一个CSSStyleDeclaration对象，其中包含当前元素的所有计算的样式。
 
