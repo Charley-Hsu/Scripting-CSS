@@ -2,7 +2,6 @@
 将会写一些关于javascript脚本化CSS知识点的内容
 ------
 
-[TOC]
 
 ------
 ## 0.什么是脚本化CSS
@@ -130,44 +129,50 @@ test.style.height = '20';
 
 ## 2.3Properties
 
-> *1. **CSSStyleDeclaration.cssText**
-    声明块的文本内容。设置这个属性会改变样式。IE8-浏览器返回的属性名是全大写的。
+> *  1. **CSSStyleDeclaration.cssText**
+    声明块的文本内容。设置这个属性会改变样式。 
+    *IE8-浏览器返回的属性名是全大写的。*
     IE8-浏览器返回&#39;HEIGHT:40px;WIDTH:40px;&#39;其他浏览器返回&#39;height: 40px; width: 40px;&#39;
 
-> *2. **CSSStyleDeclaration.length**
+> *  2. **CSSStyleDeclaration.length**
     length属性返回内联样式中的样式个数。
-    <i class="icon-warning-sign"></i>IE8-浏览器不支持
+    <i class="icon-warning-sign"></i>
+    *IE8-浏览器不支持*
 
-> *3. **CSSStyleDeclaration.parentRule**
+> *   3. **CSSStyleDeclaration.parentRule**
     parentRule属性表示CSS信息的CSSRule对象。
     *IE8-浏览器不支持*
 
 ### 2.4Method
 
-> * 1. **getPropertyPriority()**
+> *  1. **getPropertyPriority()**
     返回可选的优先级，如果给定的属性使用了!important设置，则返回&quot;important&quot;；否则返回空字符串。
     *IE8-浏览器不支持*
+    
     ```javascript
      priString= styleObj.getPropertyPriority(&#39;color&#39;)
      ```
 
-> * 2. **getPropertyValue()**
+> *  2. **getPropertyValue()**
     返回给定属性的值，字符串类型。
+    
     ```javascript
     valString= styleObj.getPropertyValue(&#39;color&#39;)
     ```
     *IE8-浏览器不支持*
 
-> * 3. **item()**
+> *  3. **item()**
     返回给定位置的CSS属性的名称，也可以使用方括号语法
+    
     ``` javascript
     nameString= styleObj.item(0)
     Or: nameString= styleObj[0]
     ```
     *IE8-浏览器不支持item()方法，只支持方括号语法*
 
-> *4. **removeProperty()**
+> *  4. **removeProperty()**
     从样式中删除给定属性，并返回被删除属性的属性值
+    
     ``` javascript 
     var String= styleObj.removeProperty(&#39;color&#39;)
     ```
