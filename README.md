@@ -149,33 +149,33 @@ test.style.height = '20';
     返回可选的优先级，如果给定的属性使用了!important设置，则返回&quot;important&quot;；否则返回空字符串。
     *IE8-浏览器不支持*
     
-    ```javascript
+```javascript
      priString= styleObj.getPropertyPriority(&#39;color&#39;)
-     ```
+```
 
 > * 2.**getPropertyValue()**
     返回给定属性的值，字符串类型。
     
-    ```javascript
+```javascript
     valString= styleObj.getPropertyValue(&#39;color&#39;)
-    ```
+```
     *IE8-浏览器不支持*
 
 > * 3.**item()**
     返回给定位置的CSS属性的名称，也可以使用方括号语法
     
-    ``` javascript
+```javascript
     nameString= styleObj.item(0)
     Or: nameString= styleObj[0]
-    ```
+```
     *IE8-浏览器不支持item()方法，只支持方括号语法*
 
 > * 4.**removeProperty()**
     从样式中删除给定属性，并返回被删除属性的属性值
     
-    ``` javascript 
+```javascript 
     var String= styleObj.removeProperty(&#39;color&#39;)
-    ```
+```
     *IE8-浏览器不支持*
 
 1. setProperty()
