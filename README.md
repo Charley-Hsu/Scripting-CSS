@@ -234,7 +234,7 @@ getComputedStyle(div).width
 
 比如，浏览者看过某个网站， 它的链接通常会变成蓝色带下划线的链接，通过判断链接的颜色（getComputedSytle(node, null).color) 是否为蓝色，就会泄露用户的浏览历史， 所以浏览器会特意返回不准确的值，保护用户隐私。
 
-### 3.4        IE-浏览器
+### 3.4 IE-浏览器
 
 IE8-浏览器不支持getComputedStyle()方法，但在IE中每个具有style属性的元素有一个currentStyle属性，这个属性是CSSStyleDeclaration的实例，currentStyle属性中的计算样式并不会输出复合样式，对颜色、百分比设置不会进行相应转换，而是原样输出。
 
@@ -256,7 +256,7 @@ console.log(test.currentStyle.a);
 
 &lt;/script&gt;
 
-1. 4.脚本化CSS类
+## 4.脚本化CSS类
 
 ### 4.1Description
 
@@ -316,7 +316,7 @@ myDiv.classList.replace(&quot;foo&quot;, &quot;bar&quot;);
 
 仅chrome和Firefox浏览器支持
 
-1. 5.脚本化样式表
+## 5.脚本化样式表
 
 ### 5.1Description
 
@@ -330,13 +330,13 @@ var firstRule = document.styleSheets[0].cssRules[0];
 
 ### 5.2Used
 
-- **开启和关闭样式表**
+**开启和关闭样式表**
 
 &lt;style&gt;、&lt;link&gt;元素和CSSStyleSheet对象都定义了一个在javascript中可以设置和查询的disabled属性。顾名思义，如果disabled属性为true，样式表就被浏览器关闭并忽略。
 
 Example：document.styleSheets[0].disabled=true;
 
-- **查询、插入、删除样式表**
+**查询、插入、删除样式表**
 
 document.styleSheets[]数组的元素是CSSStyleSheet对象。CSSStyleSheet对象有一个cssRules[]数组，它包含所有样式表规则。
 
@@ -344,13 +344,13 @@ Example：var firstRule = document.styleSheets[0].cssRules[0];
 
 Note: IE8及更早版本实现的API和其它浏览器实现的标准API之间有一些轻微的区别。IE使用不同的属性名rules代替cssRules。后面将会提到二者之间细微的区别。
 
-- **创建新的样式表**
+**创建新的样式表**
 
 创建整个新样式表并将其添加到文档是中可能的。在大多数浏览器中，可以用标准的DOM技术:只要创建一个新的&lt;style&gt;元素，将其插入到文档的头部,然后用其innerHTML属性来设置样式表内容。但是在IE8以及更早的版本中，CSSStyleSheet对象通过非标准方法document.createStyleSheet()来创建，其样式文本用cssText属性值来指定。
 
 ### 5.3Properties
 
-- **CSSStyleSheet对象**
+**CSSStyleSheet对象**
 
 CSSStyleSheet对象只是一个类数组对象，它继承自Stylesheet。CSSStyleSheet具有以下属性：
 
@@ -369,7 +369,7 @@ CSSStyleSheet对象只是一个类数组对象，它继承自Stylesheet。CSSSty
 | cssRules | 样式表中包含的样式规则的集合 | IE8-浏览器不支持cssRules属性，但有一个类似的rules属性。Firefox不支持rules属性。 |
 | ownerRule | 如果样式表是通过@import导入的，ownerRule属性就是一个指针，指向表示导入的规则；否则，值为null | IE8-浏览器不支持。 |
 
-- **CSSRule对象**
+**CSSRule对象**
 
 CSSRule对象表示样式表中的每一条规则。实际上，CSSRule是一个供其他多种类型继承的基类型，其中最常见的就是CSSStyleRule类型，表示样式信息。其他规则还包括@import、@font-face、@page和@charset。
 
@@ -390,7 +390,7 @@ document.styleSheets[0].cssRules[0] || document.styleSheets[0].rules[0]
 
 **CSSStyleSheet对象中的方法：**
 
-- **insertRule()**
+**insertRule()**
 
 insertRule(rule,index)方法表示向cssRules集合中指定的位置插入rule字符串，并返回当前样式表的索引值。
 
@@ -400,10 +400,9 @@ Note：IE8-浏览器方法addRule(ruleKey,ruleValue,index)向cssRules集合中�
 
       Firefox浏览器不支持。
 
-- **deleteRule()**
+**deleteRule()**
 
 deleteRule(index)方法删除cssRules集合中指定位置的规则，无返回值。document.styleSheets[0].deleteRule(0)
 
-Note：IE8-浏览器方法removeRule(index)方法删除cssRules集合中指定位置的规则，无返回值。
-
-Firefox浏览器不支持。
+*IE8-浏览器方法removeRule(index)方法删除cssRules集合中指定位置的规则，无返回值。
+Firefox浏览器不支持。*
