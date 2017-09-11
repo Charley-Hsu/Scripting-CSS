@@ -288,7 +288,7 @@ myDiv.classList.add(&#39;myCssClass&#39;);
 
 IE-浏览器不支持多参数传递
 
-1. 使用 **remove** 方法，可以删除单个CSS类：
+2. 使用 **remove** 方法，可以删除单个CSS类：
 
 myDiv.classList.remove(&#39;myCssClass&#39;);
 
@@ -296,7 +296,7 @@ myDiv.classList.remove(&#39;myCssClass&#39;);
 
 IE-浏览器不支持多参数传递
 
-1. 使用 **toggle** 方法，可以反转CSS类的有无
+3. 使用 **toggle** 方法，可以反转CSS类的有无
 
 myDiv.classList.toggle(&#39;myCssClass&#39;);
 
@@ -306,11 +306,11 @@ myDiv.classList.toggle(&#39;myCssClass&#39;);
 
 IE-浏览器不支持第二个参数
 
-1. 使用 **contains** 方法，检查是否含有某个CSS类
+4. 使用 **contains** 方法，检查是否含有某个CSS类
 
 myDiv.classList.contains(&#39;myCssClass&#39;); //returns true or false
 
-1. 使用 **replace** 方法，用新类替换现有的CSS类
+5. 使用 **replace** 方法，用新类替换现有的CSS类
 
 myDiv.classList.replace(&quot;foo&quot;, &quot;bar&quot;);
 
